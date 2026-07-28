@@ -170,3 +170,21 @@ Bar chart
 Histogram
 Line chart
 Pie chart
+
+Dashboard
+
+Create a polished Streamlit interface with:
+
++--------------------------------------+
+| Ask your question                    |
++--------------------------------------+
+
+Generated SQL
+
+Explanation
+
+Results
+
+Charts
+
+Download CSV
