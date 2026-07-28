@@ -76,3 +76,97 @@ Example:
 ✅ SQL formatting
 
 Display nicely formatted SQL before execution.
+Phase 3 – Production Features 
+
+This is what makes the project stand out.
+
+SQL Validation
+
+Reject queries like:
+
+DROP TABLE
+DELETE
+UPDATE
+
+Allow only safe read operations.
+
+Automatic SQL correction
+
+If SQL fails:
+
+Unknown column
+
+The agent reads the error, fixes the query, and retries.
+
+Query history
+
+Show:
+
+Question
+SQL
+Execution time
+Result
+Export
+
+Allow users to download:
+
+CSV
+Excel
+Charts
+
+Automatically create:
+
+Bar chart
+Pie chart
+Line chart
+
+based on the result set.
+
+Phase 4 – AI Engineer Level Features
+
+This is where your project becomes especially impressive.
+
+Multi-Agent Architecture
+
+Create separate agents with clear responsibilities:
+
+Planner Agent
+
+Understands the user's intent.
+
+↓
+
+SQL Generator Agent
+
+Creates the SQL query.
+
+↓
+
+SQL Validator Agent
+
+Checks syntax and safety.
+
+↓
+
+Database Agent
+
+Executes the SQL.
+
+↓
+
+Analyst Agent
+
+Explains the findings in plain English.
+
+You can orchestrate these with LangGraph.
+
+Visualization Agent
+
+If the output is numerical:
+
+Automatically recommend:
+
+Bar chart
+Histogram
+Line chart
+Pie chart
