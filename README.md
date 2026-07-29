@@ -1,190 +1,230 @@
-# SQL-AI-Agent
-Phase 1 – Basic SQL Agent (Week 1)
+# AI-Powered SQL Agent for Natural Language Data Analytics
 
-Goal: Convert natural language to SQL.
+An AI-powered SQL Agent that enables users to interact with structured datasets using natural language. Instead of manually writing SQL queries, users can upload CSV/Excel files, ask questions in plain English, and receive AI-generated SQL queries with data-driven insights.
 
-Tech Stack
+## 🚀 Project Overview
 
-Python
-LangChain
-OpenAI API (or another LLM)
-MySQL or PostgreSQL
-Streamlit
+Traditional data analysis requires users to understand SQL and database structures. This project uses Large Language Models (LLMs) and AI Agents to bridge the gap between users and databases.
 
-Example:
+The system allows users to:
 
-User:
+* Upload structured datasets (CSV/Excel)
+* Automatically store data in PostgreSQL
+* Ask questions using natural language
+* Generate SQL queries automatically
+* Execute queries on the database
+* Receive meaningful analytical responses
 
-Show the top 5 customers by sales.
+---
 
-↓
+## ✨ Features
 
-Agent:
+✅ Natural Language to SQL Generation
+✅ AI-powered database querying
+✅ CSV and Excel dataset upload
+✅ Automatic PostgreSQL table creation
+✅ Conversational data analysis
+✅ User authentication system
+✅ Dynamic database schema understanding
+✅ SQL-based insights generation
 
-SELECT customer_name, SUM(amount) AS total_sales
-FROM sales
-GROUP BY customer_name
-ORDER BY total_sales DESC
-LIMIT 5;
+---
 
-↓
+## 🏗️ Architecture
 
-Execute query
+```
+User
+ |
+ | Natural Language Question
+ |
+ v
+Streamlit Application
+ |
+ v
+LangChain SQL Agent
+ |
+ v
+Large Language Model (Claude Sonnet 4)
+ |
+ v
+Generated SQL Query
+ |
+ v
+PostgreSQL Database
+ |
+ v
+Analytical Response
+```
 
-↓
+---
 
-Display table
+## 🛠️ Tech Stack
 
-At the end of this phase, you'll have a working AI-powered SQL assistant.
+### Programming Language
 
-Phase 2 – Intelligent SQL Agent (Week 2)
+* Python
 
-Add features like:
+### AI / LLM
 
-✅ Database schema understanding
+* Claude Sonnet 4
+* OpenRouter API
+* LangChain SQL Agent
 
-Instead of hardcoding table names, the agent reads the schema automatically.
+### Database
 
-Example:
+* PostgreSQL
+* SQLAlchemy
 
-customers
-orders
-products
-employees
-payments
+### Data Processing
 
-The LLM understands how the tables relate.
+* Pandas
 
-✅ Conversation memory
+### Frontend
 
-User:
+* Streamlit
 
-Show sales in Texas.
+### Authentication
 
-Then:
+* PostgreSQL User Management
+* Password Hashing
 
-Only Dallas.
+---
 
-The agent understands the follow-up.
+## 📂 Project Structure
 
-✅ SQL explanation
+```
+AI-Powered-SQL-Agent/
 
-Example:
+│
+├── app.py                  # Streamlit application
+├── sql_agent.py            # SQL Agent implementation
+├── auth.py                 # User authentication
+├── db.py                   # Database connection testing
+│
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
+├── .gitignore              # Ignored files
+```
 
-"This query calculates total sales grouped by product."
+---
 
-✅ SQL formatting
+## ⚙️ Installation and Setup
 
-Display nicely formatted SQL before execution.
-Phase 3 – Production Features 
+### 1. Clone Repository
 
-This is what makes the project stand out.
+```bash
+git clone https://github.com/sravanthiputchakayala/SQL-AI-Agent.git
 
-SQL Validation
+cd SQL-AI-Agent
+```
 
-Reject queries like:
+---
 
-DROP TABLE
-DELETE
-UPDATE
+### 2. Create Virtual Environment
 
-Allow only safe read operations.
+```bash
+python -m venv venv
+```
 
-Automatic SQL correction
+Activate:
 
-If SQL fails:
+Windows:
 
-Unknown column
+```bash
+venv\Scripts\activate
+```
 
-The agent reads the error, fixes the query, and retries.
+---
 
-Query history
+### 3. Install Dependencies
 
-Show:
+```bash
+pip install -r requirements.txt
+```
 
-Question
-SQL
-Execution time
-Result
-Export
+---
 
-Allow users to download:
+### 4. Configure Environment Variables
 
-CSV
-Excel
-Charts
+Create a `.env` file:
 
-Automatically create:
+```
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=your_database_name
+DB_USER=your_username
+DB_PASSWORD=your_password
 
-Bar chart
-Pie chart
-Line chart
+OPENROUTER_API_KEY=your_api_key
+```
 
-based on the result set.
+---
 
-Phase 4 – AI Engineer Level Features
+### 5. Run Application
 
-This is where your project becomes especially impressive.
+Start Streamlit:
 
-Multi-Agent Architecture
+```bash
+streamlit run app.py
+```
 
-Create separate agents with clear responsibilities:
+---
 
-Planner Agent
+## 💡 Example Usage
 
-Understands the user's intent.
+User uploads:
 
-↓
+```
+Loan_default.csv
+```
 
-SQL Generator Agent
+User asks:
 
-Creates the SQL query.
+```
+What factors contribute most to loan defaults?
+```
 
-↓
+The AI Agent:
 
-SQL Validator Agent
+1. Understands the question
+2. Analyzes database schema
+3. Generates SQL query
+4. Executes query
+5. Provides insights
 
-Checks syntax and safety.
+---
 
-↓
+## 📊 Future Improvements
 
-Database Agent
+* Automated data visualization generation
+* SQL query explanation panel
+* Cloud deployment
+* Advanced data profiling
+* Multi-user dataset management
+* Chat history storage
 
-Executes the SQL.
+---
 
-↓
+## 🎯 Learning Outcomes
 
-Analyst Agent
+Through this project, I explored:
 
-Explains the findings in plain English.
+* Building LLM-powered applications
+* AI Agent workflows
+* Natural Language to SQL systems
+* Database integration with Generative AI
+* Building practical AI analytics solutions
 
-You can orchestrate these with LangGraph.
+---
 
-Visualization Agent
+## 👩‍💻 Author
 
-If the output is numerical:
+**Sravanthi Putchakayala**
 
-Automatically recommend:
+GitHub:
+https://github.com/sravanthiputchakayala
 
-Bar chart
-Histogram
-Line chart
-Pie chart
 
-Dashboard
+---
 
-Create a polished Streamlit interface with:
-
-+--------------------------------------+
-| Ask your question                    |
-+--------------------------------------+
-
-Generated SQL
-
-Explanation
-
-Results
-
-Charts
-
-Download CSV
+## ⭐ If you find this project interesting, feel free to star the repository!
